@@ -1,0 +1,59 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <UserSecretsId>cc6d4fc1-854f-4e14-816d-56813538e982</UserSecretsId> 
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile></DocumentationFile>
+    <NoWarn>1701;1702</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Microsoft.Teams.Apps.TeamHistoryManagement.Contracts\**" />
+    <Content Remove="Microsoft.Teams.Apps.TeamHistoryManagement.Contracts\**" />
+    <EmbeddedResource Remove="Microsoft.Teams.Apps.TeamHistoryManagement.Contracts\**" />
+    <None Remove="Microsoft.Teams.Apps.TeamHistoryManagement.Contracts\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.Bot.Builder.Integration.AspNet.Core" Version="4.8.0" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Wkhtmltopdf.NetCore" Version="2.0.1" />
+  </ItemGroup>
+
+    <ItemGroup>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Microsoft.Teams.Apps.TeamHistoryManagement.Contracts\Microsoft.Teams.Apps.TeamHistoryManagement.Contracts.csproj" />
+      <ProjectReference Include="..\Microsoft.Teams.Apps.TeamHistoryManagement.MSGraphProvider\Microsoft.Teams.Apps.TeamHistoryManagement.MSGraphProvider.csproj" />
+      <ProjectReference Include="..\Microsoft.Teams.Apps.TeamHistoryManagement.ReportsGenerators\Microsoft.Teams.Apps.TeamHistoryManagement.ReportsGenerators.csproj" />
+      <ProjectReference Include="..\Microsoft.Teams.Apps.TeamHistoryManagement.TeamsBot\Microsoft.Teams.Apps.TeamHistoryManagement.TeamsBot.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Rotativa\Windows\" />
+    </ItemGroup>
+    <ItemGroup>
+      <AdditionalFiles Include="..\stylecop.json" Link="stylecop.json" />
+    </ItemGroup>
+    <ItemGroup>
+      <None Update="Rotativa\Windows\wkhtmltopdf.exe">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="Rotativa\wkhtmltopdf.exe">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
+</Project>

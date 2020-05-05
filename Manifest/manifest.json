@@ -1,0 +1,70 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.5/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.5",
+  "version": "1.0.0",
+  "id": "1547f520-a950-4139-ae02-f4c5ee34e9f0",
+  "packageName": "Extraction bot",
+  "developer": {
+    "name": "Developer",
+    "websiteUrl": "<<websiteUrl>>",
+    "privacyUrl": "<<privacyUrl>>",
+    "termsOfUseUrl": "<<termsOfUseUrl>>",
+    "mpnId": "5185221"
+  },
+  "icons": {
+    "color": "color.png",
+    "outline": "outline.png"
+  },
+  "name": {
+    "short": "Extraction Bot"
+  },
+  "description": {
+    "short": "Extract your chat history.",
+    "full": "A bot that exports messages from chats and channels."
+  },
+  "accentColor": "#FFFFFF",
+  "bots": [
+    {
+      "botId": "<<botId>>",
+      "scopes": [
+        "team",
+        "groupchat"
+      ],
+      "supportsFiles": true,
+      "isNotificationOnly": false
+    }
+  ],
+  "composeExtensions": [
+    {
+      "botId": "<<botId>>",
+      "canUpdateConfiguration": true,
+      "commands": [
+        {
+          "id": "extractHistory",
+          "type": "action",
+          "title": "Extract history",
+          "description": "Extract history from chat, channel or conversation.",
+          "initialRun": false,
+          "fetchTask": true,
+          "context": [
+            "message"
+          ],
+          "parameters": [
+            {
+              "name": "fetchTask",
+              "title": "fetchTask"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "permissions": [
+    "identity",
+    "messageTeamMembers"
+  ],
+  "validDomains": [
+    "token.botframework.com",
+    "<<validDomains>>"
+  ]
+}

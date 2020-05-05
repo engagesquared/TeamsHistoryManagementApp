@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <style>
+        .message-content * {
+            background-color: transparent;
+            margin: 0px;
+        }
+
+        .message-content-normal,
+        .message-content-high,
+        .message-content-urgent {
+            display: block;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            padding: 5px;
+            
+            max-width: 1024px;
+        }
+
+        .message-header {
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .no-thread-message,
+        .root-thread-message,
+        .thread-message {
+            width: 100%;
+            display: block;
+        }
+
+        .message-content-normal {
+            background-color: #def;
+            border-left: #808080 solid 3px;
+        }
+            .message-content-high {
+            border-left: #f72626 solid 5px;
+            background-color: #eef124;
+        }
+
+        .message-content-urgent {
+            border-left: #f72626 solid 5px;
+            background-color: #e79f18;
+        }
+
+        .thread-message .message-content-normal,
+        .thread-message .message-content-high,
+        .thread-message .message-content-urgent {
+            margin-left: 20px;
+        }
+
+        .root-thread-message .message-content-normal,
+        .root-thread-message .message-content-high,
+        .root-thread-message .message-content-urgent {
+            background-color: #fee;
+            border-left: #00008b solid 5px;
+        }
+
+        .message-modified-time,
+        .message-deleted-time {
+            font-size: 12px;
+            color: #808080;
+        }
+
+
+        span.message-created-time {
+            font-size: 14px;
+            float: right;
+        }
+
+        .message-author {
+            font-weight: 600;
+            padding-right: 50px;
+        }
+
+        .message-text {
+            color: #666;
+            box-sizing: content-box;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+            .message-text * {
+                margin: 0px;
+                padding: 0px;
+            }
+
+            .message-text div {
+                display: block;
+            }
+
+            .message-text at {
+                color: #00008b;
+                font-weight: 600;
+            }
+
+        .message-attachments {
+            display: block;
+            margin-left: 0px;
+            margin-right: auto;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .message-reactions {
+            font-size: 13px;
+            color: #70ac10;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+
+        .message-attachments .attachment {
+            font-size: 12px;
+            color: #0f6835;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h3 id="report-type"></h3>
+        <h4 id="report-time-range"></h4>
+        <h4 id="report-generation-details"></h4>
+        <h4 style="color:darkorange">This report doesn't repeat Teams channel/chat styling</h4>
+    </header>
+    <article id="history" style="display:block; width:100%;"></article>
+</body>
+
+</html>
