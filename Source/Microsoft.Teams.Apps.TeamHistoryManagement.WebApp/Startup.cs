@@ -37,6 +37,7 @@ namespace Microsoft.Teams.Apps.TeamHistoryManagement.WebApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddApplicationInsightsTelemetry();
             services.AddOptions();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
