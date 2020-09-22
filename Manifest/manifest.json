@@ -3,7 +3,7 @@
   "manifestVersion": "1.5",
   "version": "1.0.0",
   "id": "1547f520-a950-4139-ae02-f4c5ee34e9f0",
-  "packageName": "Extraction bot",
+  "packageName": "com.example.extractionbot",
   "developer": {
     "name": "Developer",
     "websiteUrl": "<<websiteUrl>>",
